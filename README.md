@@ -1,5 +1,5 @@
 # Coinbase-Monitor
-Monitor Coinbase for you're favorite Crypto!
+Monitor Coinbase. For any Price Changes of your favorite Crypto!
 
 ###### Developer: @bopped /// [My Twitter](https://twitter.com/Backdoorcook).
 
