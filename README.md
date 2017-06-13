@@ -26,3 +26,9 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 
 
 
+## Thank yous:
+
+- Thank you @yeezylegion for API links.
+
+- Thank you eggins / @darroneggins for logger.
+
