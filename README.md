@@ -32,3 +32,4 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 
 - Thank you eggins / @darroneggins for logger.
 
+- Thank you Turtl @snupreme for the inital idea. 
