@@ -66,13 +66,10 @@ class logger:
 		if new_line:
 			msg += '\n'
 			sys.stdout.write('%s' % (msg))
-
 			sys.stdout.flush()
 			return True
 		
-		elif msg != '':
-			sys.stdout.write('[%s] %s' % (currentTime, msg))
-
+		sys.stdout.write('[%s] %s' % (currentTime, msg))
 		sys.stdout.flush()
 
 	def returnLine(self):
