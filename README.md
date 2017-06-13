@@ -20,7 +20,9 @@ Monitor Coinbase for you're favorite Crypto!
 - [ ] Other Crypto. 
 
 
+## Current Cryptos:
 
+- Hardcoded: BTC, ETH , LTC
 
 
 
