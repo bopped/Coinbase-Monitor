@@ -34,29 +34,31 @@ class Monitor:
 		ltcAPIURL       = "https://www.coinbase.com/api/v2/prices/LTC-USD/spot?"
 		ltcHourAPIURL   = "https://www.coinbase.com/api/v2/prices/LTC-USD/historic?period=hour"
 
-		currentBTC = s.get(btcAPIURL).json()['data']['amount']
-		currentETH = s.get(ethAPIURL).json()['data']['amount']
-		currentLTC = s.get(ltcAPIURL).json()['data']['amount']
+		while True:
+			
+			currentBTC = s.get(btcAPIURL).json()['data']['amount']
+			currentETH = s.get(ethAPIURL).json()['data']['amount']
+			currentLTC = s.get(ltcAPIURL).json()['data']['amount']
 
-		btcChangeAPI = s.get(btcHourAPIURL).json()['data']['prices']
-		ethChangeAPI = s.get(ethHourAPIURL).json()['data']['prices']
-		ltcChangeAPI = s.get(ltcHourAPIURL).json()['data']['prices']
+			btcChangeAPI = s.get(btcHourAPIURL).json()['data']['prices']
+			ethChangeAPI = s.get(ethHourAPIURL).json()['data']['prices']
+			ltcChangeAPI = s.get(ltcHourAPIURL).json()['data']['prices']
 
-		changeBTC    = float(btcChangeAPI[1]['price']) - float(btcChangeAPI[-1]['price'])
-		changeETH    = float(ethChangeAPI[1]['price']) - float(ethChangeAPI[-1]['price'])
-		changeLTC    = float(ltcChangeAPI[1]['price']) - float(ltcChangeAPI[-1]['price'])
+			changeBTC    = float(btcChangeAPI[1]['price']) - float(btcChangeAPI[-1]['price'])
+			changeETH    = float(ethChangeAPI[1]['price']) - float(ethChangeAPI[-1]['price'])
+			changeLTC    = float(ltcChangeAPI[1]['price']) - float(ltcChangeAPI[-1]['price'])
 
-		log("-------------------------------")
-		log(Change.change("BTC", currentBTC, changeBTC))
-		log(Change.change("ETH", currentETH, changeETH))
-		log(Change.change("LTC", currentLTC, changeLTC))
-		log("-------------------------------")
+			log("-------------------------------")
+			log(Change.change("BTC", currentBTC, changeBTC))
+			log(Change.change("ETH", currentETH, changeETH))
+			log(Change.change("LTC", currentLTC, changeLTC))
+			log("-------------------------------")
 
-		sleepTime = 25
-		for i in range(sleepTime):
-			returnLine()
-			overWrite("%s%sSleeping... %d Seconds left%s" % (Style.BRIGHT,Fore.BLUE, sleepTime-i, Style.RESET_ALL), False)
-			time.sleep(1)
+			sleepTime = 25
+			for i in range(sleepTime):
+				returnLine()
+				overWrite("%s%sSleeping... %d Seconds left%s" % (Style.BRIGHT,Fore.BLUE, sleepTime-i, Style.RESET_ALL), False)
+				time.sleep(1)
 
 
 
