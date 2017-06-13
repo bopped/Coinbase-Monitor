@@ -52,9 +52,10 @@ class Monitor:
 		log(Change.change("LTC", currentLTC, changeLTC))
 		log("-------------------------------")
 
-		for i in range(3600):
+		sleepTime = 25
+		for i in range(sleepTime):
 			returnLine()
-			overWrite("%s%sSleeping... %d Seconds left%s" % (Style.BRIGHT,Fore.BLUE, 3600-i, Style.RESET_ALL), False)
+			overWrite("%s%sSleeping... %d Seconds left%s" % (Style.BRIGHT,Fore.BLUE, sleepTime-i, Style.RESET_ALL), False)
 			time.sleep(1)
 
 
