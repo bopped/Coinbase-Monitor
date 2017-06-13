@@ -35,7 +35,7 @@ class Monitor:
 		ltcHourAPIURL   = "https://www.coinbase.com/api/v2/prices/LTC-USD/historic?period=hour"
 
 		while True:
-			
+
 			currentBTC = s.get(btcAPIURL).json()['data']['amount']
 			currentETH = s.get(ethAPIURL).json()['data']['amount']
 			currentLTC = s.get(ltcAPIURL).json()['data']['amount']
@@ -54,12 +54,15 @@ class Monitor:
 			log(Change.change("LTC", currentLTC, changeLTC))
 			log("-------------------------------")
 
-			sleepTime = 25
+			sleepTime = 5
 			for i in range(sleepTime):
 				returnLine()
 				overWrite("%s%sSleeping... %d Seconds left%s" % (Style.BRIGHT,Fore.BLUE, sleepTime-i, Style.RESET_ALL), False)
 				time.sleep(1)
+			
+			overWrite("", True)
 
+			log("%s%sRe-Scraping!%s" % (Style.BRIGHT,Fore.BLUE, Style.RESET_ALL))
 
 
 
