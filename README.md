@@ -19,6 +19,8 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 
 - [ ] Other Crypto. 
 
+- [ ] Store Past Scrape, to compare!
+
 
 ## Current Cryptos:
 
