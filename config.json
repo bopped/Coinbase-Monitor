@@ -1,7 +1,7 @@
 {
     "Monitor":{
         	
-    	"Name":["btc","lTC",""],
+    	"Name":["btc","lTC","eTh"],
         "Sleep":5
 
     }
