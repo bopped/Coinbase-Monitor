@@ -13,8 +13,8 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 ## How to install using Git Clone [MAC/Linux/Windows]:
 1a. **If you are on Windows. Install [Git](https://git-scm.com/)** 
 1. Open terminal/cmd. 
-2. cd to anywhrere you are comfortable with. e.g. Desktop / Downloads.
-3. Type the following: git clone https://github.com/bopped/Coinbase-Monitor.git
+2. cd to anywhrere you are comfortable with. e.g. Desktop / Downloads. 
+3. Type the following: git clone https://github.com/bopped/Coinbase-Monitor.git **Screenshot Below** 
 4. This will auto download this project.
 5. Type cd Coinbase-Monitor
 6. python Main.py 
@@ -50,6 +50,7 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 
 ![alt text](http://i.imgur.com/m734Zvo.png "Preview #2. If one of the Cryptos in your config are wrong, monitor will continue but prompt you once.")
 
+![alt text](http://i.imgur.com/sxFhC7M.png "Git clone ")
 
 ## Current Support:
 
