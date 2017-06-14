@@ -27,7 +27,9 @@ class Monitor:
 		sleepTime   = config['Monitor']['Sleep']
 
 		while True:
+
 			log("--------------------------------------------------------------")
+
 			for x in range(len(Cryptos)):
 				Crypto = Cryptos[x].upper()
 
