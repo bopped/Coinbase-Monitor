@@ -10,9 +10,9 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 - **PLEASE DO NOT USE TEXTEDIT OR NOTEPAD TO EDIT CONFIG!!!!!!!**
 - **USE SUBLIME TEXT or ATOM, or any other JSON supported editors** 
 
-## How to use [MAC/Linux]:
-
-1. Open terminal. 
+## How to install using Git Clone [MAC/Linux/Windows]:
+1a. **If you are on Windows. Install [Git](https://git-scm.com/)** 
+1. Open terminal/cmd. 
 2. cd to anywhrere you are comfortable with. e.g. Desktop / Downloads.
 3. Type the following: git clone https://github.com/bopped/Coinbase-Monitor.git
 4. This will auto download this project.
@@ -20,7 +20,7 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 6. python Main.py 
 7. Done! 
 
-## How to use on Windows/Mac:
+## How to install on Windows/Mac:
 
 1. Download this project.
 
