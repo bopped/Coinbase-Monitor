@@ -28,14 +28,6 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 
 3. python Main.py 
 
-
-
-
-
-
-
-
-
 ## Features:
 
 - [x] Monitor via API
@@ -49,6 +41,17 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 - [ ] Slack / Twitter Integration
 
 - [ ] Store Past Scrape, to compare!
+
+## Screenshots
+
+![alt text](http://i.imgur.com/5HCMdLC.png "Preview #1. As well a demo of cd to dir")
+
+![alt text](http://i.imgur.com/6cPMKOA.png "Preview #2.")
+
+![alt text](http://i.imgur.com/m734Zvo.png "Preview #2. If one of the Cryptos in your config are wrong, monitor will continue but prompt you once.")
+
+
+
 
 
 ## Current Support:
