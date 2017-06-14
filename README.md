@@ -22,11 +22,11 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 
 ## How to use on Windows/Mac:
 
-- Download this project.
+1. Download this project.
 
-- cd into the project via CMD,Terminal. 
+2. cd into the project via CMD,Terminal. 
 
-- python Main.py 
+3. python Main.py 
 
 
 
