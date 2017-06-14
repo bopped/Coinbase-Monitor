@@ -22,9 +22,9 @@ class Monitor:
 
 
 	def CoinBase(self, config):
-		Warned  = False
-		Cryptos = config['Monitor']['Name']
-		Sleep   = config['Monitor']['Sleep']
+		Warned      = False
+		Cryptos     = config['Monitor']['Name']
+		sleepTime   = config['Monitor']['Sleep']
 
 		while True:
 			log("--------------------------------------------------------------")
@@ -47,7 +47,7 @@ class Monitor:
 				log(Change.change(Crypto, currentPrice, changeCrypto))
 
 			log("--------------------------------------------------------------")
-			sleepTime = 5
+
 			for i in range(sleepTime):
 				returnLine()
 				overWrite("%s%sSleeping... %d Seconds left%s" % (Style.BRIGHT,Fore.BLUE, sleepTime-i, Style.RESET_ALL), False)
