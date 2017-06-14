@@ -7,13 +7,16 @@ if os.name == 'nt':
 	init()
 
 #logger init
-from classs.logger import logger
+from classes.logger import logger
 log        = logger().log
 overWrite  = logger().overwriteLine
 returnLine = logger().returnLine
+
+#requests Session
 s          = requests.Session()
 
-from classs.coinBaseChange import Change
+
+from classes.coinBaseChange import Change
 Change = Change()
 
 

@@ -5,10 +5,10 @@ from colorama import *
 if os.name == 'nt':
 	init()
 
-from classs.logger import logger
+from classes.logger import logger
 log     = logger().log
 
-from classs.Coinbase import Monitor
+from classes.Coinbase import Monitor
 
 coinbaseMonitor = Monitor()
 
