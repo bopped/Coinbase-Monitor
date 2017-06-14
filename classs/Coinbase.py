@@ -21,47 +21,39 @@ Change = Change()
 class Monitor:
 
 
-	def CoinBase(self):
-		#BTC URLS
-		btcAPIURL       = "https://www.coinbase.com/api/v2/prices/BTC-USD/spot?"
-		btcHourAPIURL   = "https://www.coinbase.com/api/v2/prices/BTC-USD/historic?period=hour"
-
-		#ETH URLS
-		ethAPIURL       = "https://www.coinbase.com/api/v2/prices/ETH-USD/spot?"
-		ethHourAPIURL   = "https://www.coinbase.com/api/v2/prices/ETH-USD/historic?period=hour"
-
-		#LTC URLS
-		ltcAPIURL       = "https://www.coinbase.com/api/v2/prices/LTC-USD/spot?"
-		ltcHourAPIURL   = "https://www.coinbase.com/api/v2/prices/LTC-USD/historic?period=hour"
+	def CoinBase(self, config):
+		Warned  = False
+		Cryptos = config['Monitor']['Name']
+		Sleep   = config['Monitor']['Sleep']
 
 		while True:
+			log("--------------------------------------------------------------")
+			for x in range(len(Cryptos)):
+				Crypto = Cryptos[x].upper()
 
-			currentBTC = s.get(btcAPIURL).json()['data']['amount']
-			currentETH = s.get(ethAPIURL).json()['data']['amount']
-			currentLTC = s.get(ltcAPIURL).json()['data']['amount']
+				if len(Crypto) != 3:
+					if not Warned:
+						log("One of the cryptos in your config is wrong, scraping properly setup ones anyways!",'info')
+						Warned = True
+					continue
 
-			btcChangeAPI = s.get(btcHourAPIURL).json()['data']['prices']
-			ethChangeAPI = s.get(ethHourAPIURL).json()['data']['prices']
-			ltcChangeAPI = s.get(ltcHourAPIURL).json()['data']['prices']
+				currentPriceAPI    = "https://www.coinbase.com/api/v2/prices/%s-USD/spot"                  % (Crypto)
+				HourAPIURL         = "https://www.coinbase.com/api/v2/prices/%s-USD/historic?period=hour"  % (Crypto)
 
-			changeBTC    = float(btcChangeAPI[1]['price']) - float(btcChangeAPI[-1]['price'])
-			changeETH    = float(ethChangeAPI[1]['price']) - float(ethChangeAPI[-1]['price'])
-			changeLTC    = float(ltcChangeAPI[1]['price']) - float(ltcChangeAPI[-1]['price'])
+				currentPrice       = s.get(currentPriceAPI).json()['data']['amount']
+				hourChangeAPI      = s.get(HourAPIURL).json()['data']['prices']
+				changeCrypto       = float(hourChangeAPI[1]['price']) - float(hourChangeAPI[-1]['price'])
 
-			log("-------------------------------")
-			log(Change.change("BTC", currentBTC, changeBTC))
-			log(Change.change("ETH", currentETH, changeETH))
-			log(Change.change("LTC", currentLTC, changeLTC))
-			log("-------------------------------")
+				log(Change.change(Crypto, currentPrice, changeCrypto))
 
+			log("--------------------------------------------------------------")
 			sleepTime = 5
 			for i in range(sleepTime):
 				returnLine()
 				overWrite("%s%sSleeping... %d Seconds left%s" % (Style.BRIGHT,Fore.BLUE, sleepTime-i, Style.RESET_ALL), False)
 				time.sleep(1)
-			
-			overWrite("", True)
 
+			overWrite("", True)
 			log("%s%sRe-Scraping!%s" % (Style.BRIGHT,Fore.BLUE, Style.RESET_ALL))
 
 

@@ -1,4 +1,4 @@
-import os
+import os, json 
 from colorama import *
 
 #Needed on Windows
@@ -18,6 +18,8 @@ if not os.path.exists("config.json"):
 	log("%sConfig.json not Found!!!"  %  (Fore.RED))
 	exit()
 
+with open('config.json') as json_data_file:
+	config = json.load(json_data_file)
 
 log("-------------------------------")
 log("%s%sConfiguration loaded.%s" % (Style.BRIGHT, Fore.GREEN, Style.RESET_ALL))
@@ -26,4 +28,4 @@ log("-------------------------------")
 log("%s%sCoinBase Monitor Started!%s" % (Style.BRIGHT, Fore.GREEN, Style.RESET_ALL))
 
 
-coinbaseMonitor.CoinBase()
+coinbaseMonitor.CoinBase(config)

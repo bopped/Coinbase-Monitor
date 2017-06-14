@@ -1,5 +1,8 @@
 {
-    "SETUP":{
-        
+    "Monitor":{
+        	
+    	"Name":["btc","lTC",""],
+        "Sleep":5
+
     }
 }
