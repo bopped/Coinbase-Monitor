@@ -51,15 +51,17 @@ Monitor Coinbase. For any Price Changes of your favorite Crypto!
 ![alt text](http://i.imgur.com/m734Zvo.png "Preview #2. If one of the Cryptos in your config are wrong, monitor will continue but prompt you once.")
 
 
-
-
-
 ## Current Support:
 
 - ~Hardcoded: BTC, ETH , LTC~
 - **Any Crytpo traded on Coinbase can be added to config!**
 
 
+## Bugs:
+
+- Sometimes text overlaps to past line (for sleep). 
+
+- Long Request times, if recieved enough reports about it, I will add a timeout. 
 
 
 ## Thank yous:
