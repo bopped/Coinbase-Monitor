@@ -36,8 +36,8 @@ class logger:
 			timestring = ""
 
 		# path together the message and the clear colour
-		messageString = message + self.colours['clear']
-		noColourString = message
+		messageString = str(message) + self.colours['clear']
+		noColourString = str(message)
 
 		# if there is text in the "nocolor" field
 		# add : and paste the content afterward
@@ -58,20 +58,3 @@ class logger:
 		if file:
 			with open(file, "a") as f:
 				f.write(noColourFinalString)
-
-	def overwriteLine(self, msg='', new_line=True):
-
-		currentTime = time.strftime("%H:%M:%S")
-
-		if new_line:
-			msg += '\n'
-			sys.stdout.write('%s' % (msg))
-			sys.stdout.flush()
-			return True
-		
-		sys.stdout.write('[%s] %s' % (currentTime, msg))
-		sys.stdout.flush()
-
-	def returnLine(self):
-		sys.stdout.write('\r')
-		sys.stdout.flush()
